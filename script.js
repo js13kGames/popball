@@ -22,7 +22,6 @@ function addBall() {
 
     document.body.appendChild(ball);
     toLoseBalls++;
-    console.log(toLoseBalls);
     if (toLoseBalls == 21) {
         gameOver();
     }
@@ -53,6 +52,22 @@ function showNumber(n1, n2, n3) {
 function setDifficulty(valor) {
     speed = valor;
     difficultyChose = true;
+    if (valor == 700) {
+        document.getElementById("easyButton").style.backgroundColor = "rgb(255, 102, 0)";
+        document.getElementById("normalButton").style.backgroundColor = "transparent";
+        document.getElementById("hardButton").style.backgroundColor = "transparent";
+        ;
+    }
+    else if (valor == 500) {
+        document.getElementById("easyButton").style.backgroundColor = "transparent";
+        document.getElementById("normalButton").style.backgroundColor = "rgb(255, 102, 0)";
+        document.getElementById("hardButton").style.backgroundColor = "transparent";
+    }
+    else {
+        document.getElementById("easyButton").style.backgroundColor = "transparent";
+        document.getElementById("normalButton").style.backgroundColor = "transparent";
+        document.getElementById("hardButton").style.backgroundColor = "rgb(255, 102, 0)";
+    }
 }
 function playGame() {
     if (pause == true && difficultyChose == true) {
